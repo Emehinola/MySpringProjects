@@ -1,0 +1,9 @@
+spring.application.name=demo1
+spring.mvc.view.prefix=/views/
+spring.mvc.view.suffix=.jsp
+
+spring.datasource.url=jdbc:msql://localhost:3306/test
+spring.datasource.username=root
+spring.datasource.password=12345678
+
+spring.jpa.properties.hibernate.dialet=org.hibernate.dialet.MySQL5Dialet

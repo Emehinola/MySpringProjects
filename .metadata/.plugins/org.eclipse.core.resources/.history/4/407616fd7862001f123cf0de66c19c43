@@ -1,0 +1,32 @@
+package com.demo.springmvcboot;
+
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.demo.springmvcboot.models.Alien;
+
+@Controller
+public class AlienController {
+	
+	@Autowired
+	AlienRepo repo;
+	
+	@GetMapping("aliens")
+	@ResponseBody
+	public List<Alien> getAliens() {
+		List<Alien> aliens = repo.getAll();
+		
+		return aliens;
+	}
+	
+	@GetMapping("aliens/104")
+	@ResponseBody
+	public Alien getAlienById(int id) {
+		Alien alien = repo.getOne(id);
+		return alien;
+	}
+}
